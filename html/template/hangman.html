@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bouton.css">
+    <title>Hangman web - Let's Game !</title>
+</head>
+<body>
+    <div class="container" >
+
+        <img  class="bureau" src="css/image/{{.ImageName}}.jpg" >
+
+
+        
+
+        <nav class="navbar_hangman">
+            <a href="#" class="logo"> <p style="font-family:chalktastic"> HANGMAN </p> </a>
+            <div class="navlinks_hangman">
+                <ul>
+                <li class="active"><a href="http://localhost:3000/"> <p style="font-family:chalktastic"> Acceuil </p> </a></li>
+                <li> <a href="about"> <p style="font-family:chalktastic"> About </p> </a></li>
+                <li><a href="rules"> <p style="font-family:chalktastic"> Rules </p> </a></li>
+                <li><a href="https://www.google.fr/">  <p style="font-family:chalktastic"> Exit </p> </a></li>
+                </ul>
+            </div>
+        </nav>
+
+                    {{if .EndGame}}
+                        {{if .Won}}
+                            <a href="win">
+                        {{else}}
+                                <a href="lose">
+                        {{end}}
+                    {{end}}
+
+
+
+        <input class="c-checkbox" type="checkbox" id="checkbox">
+        <div class="c-formContainer">
+            <form class="c-form" action="/temp" method="POST">
+                <input class="c-form__input" type="text" name="letter" placeholder="Saisir une lettre" pattern="[A-Za-z]{1}$" required>
+                <label class="c-form__buttonLabel" for="checkbox">
+                    <button class="c-form__button" type=""> <p style="font-family:chalktastic">Tester</p></button>
+                </label>
+                <label class="c-form__toggle" for="checkbox" data-title="Lettre a saisir"></label>
+            </form> 
+        </div>
+            
+        </nav>
+    </div>
+
+</body> 
+
+</html>
